@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booleans in JavaScript</title>
+  </head>
+  <body>
+    <script>
+      console.log(3 < 5); // true
+      console.log(5 < 3); // false
+
+      console.log(3 === 3); // true // true because 3 is equal to 3
+      console.log(3 !== 5); // true // true because 3 is not equal to 5
+
+      console.log(3 > 2 && 5 > 4); // true // here we use AND operator
+      console.log(3 > 2 || 5 < 4); // true //here we use OR operator
+
+      console.log(!(3 < 5)); // false // here we use NOT operator
+      console.log(!!(3 < 5)); // true // double NOT operator to convert to boolean
+      console.log(!!(3 > 5)); // false // double NOT operator to convert to boolean
+
+      console.log(Boolean(3 < 5)); // true // using Boolean function to convert to boolean
+      console.log(Boolean(3 > 5)); // false // using Boolean function to convert to boolean
+
+      console.log(Boolean("")); // false // empty string is falsy
+      console.log(Boolean("Hello")); // true // non-empty string is truthy
+
+      console.log(Boolean([])); // true // empty array is truthy
+      console.log(Boolean([1, 2, 3])); // true // non-empty array is truthy
+
+      console.log(Boolean({})); // true // empty object is truthy
+      console.log(Boolean({ key: "value" })); // true // non-empty object is truthy
+
+      console.log(Boolean(function () {})); // true // functions are truthy
+      console.log(Boolean(() => {})); // true // arrow functions are also truthy
+
+      console.log(Boolean(Symbol())); // true // symbols are truthy
+      console.log(Boolean(Symbol("description"))); // true // symbols with description are also truthy
+
+      console.log(Boolean(Infinity)); // true // Infinity is truthy
+      console.log(Boolean(-Infinity)); // true // -Infinity is also truthy
+
+      console.log(Boolean("0")); // true // non-empty string is truthy, even if it says "0"
+      console.log(Boolean("null")); // true // non-empty string is truthy, even if it says "null"
+      console.log(Boolean("undefined")); // true // non-empty string is truthy, even if it says "undefined"
+      console.log(Boolean("NaN")); // true // non-empty string is truthy, even if it says "NaN"
+      console.log(Boolean("true")); // true // non-empty string is truthy, even if it says "true"
+      console.log(Boolean("false")); // true // non-empty string is truthy, even if it says "false"
+
+      console.log(Boolean(" ")); // true // non-empty string with space is truthy
+      console.log(Boolean("")); // false // empty string is falsy
+      console.log(Boolean(0)); // false // 0 is falsy
+      console.log(Boolean(1)); // true // 1 is truthy
+      console.log(Boolean(-1)); // true // negative numbers are truthy
+      console.log(Boolean(0.1)); // true // non-zero numbers are truthy
+      console.log(Boolean(null)); // false // null is falsy
+      console.log(Boolean(undefined)); // false // undefined is falsy
+      console.log(Boolean(NaN)); // false // NaN is falsy
+      console.log(Boolean(true)); // true // true is truthy
+      console.log(Boolean(false)); // false // false is falsy
+    </script>
+  </body>
+</html>

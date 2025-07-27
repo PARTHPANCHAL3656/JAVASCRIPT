@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>07 - All Functions</title>
+  </head>
+  <body>
+    <script>
+      // This script demonstrates various array methods and functions in JavaScript
+      // It includes examples of map, filter, reduce, find, findIndex, some, every, includes, indexOf, lastIndexOf, join, split, reverse, sort, slice, splice, concat, fill, flat, flatMap, toString, toLocaleString, copyWithin, entries, keys, and values methods.
+      // It also includes a simple function to demonstrate function execution.
+
+      const numbers = [1, 2, 3, 4, 5]; // Array of numbers
+      const numbeers = [1, 2, 3, 4, 5, 4]; // Array of numbers
+      const nestedArray = [1, [2, 3], [4, [5, 6]]]; // Nested array
+
+      function function1() {
+        console.log("hello");
+        console.log("2+2");
+
+        return 2 + 2; // Simple function that returns the sum of 2 and 2
+      }
+      function1(); //runs the function code
+
+      function claculateTax(cost , taxPercent = 0.1) {
+        console.log(cost* taxPercent);
+      }
+      claculateTax(2000, 0.2);
+      claculateTax(5000, 0.1);
+
+
+      // Example of using booleans in a map function
+      //map function syntax
+      function map() {
+        console.log("Mapping through an array:");
+        const doubledNumbers = numbers.map((num) => num * 2); // Use map to double each number
+        console.log("Doubled Numbers: " + doubledNumbers); // Print the doubled numbers
+      }
+      map();
+
+      // Example of using booleans in a filter function
+      //filter function syntax
+      function filter() {
+        console.log("Filtering even numbers:");
+        const evenNumbers = numbers.filter((num) => num % 2 === 0); // Use filter to get even numbers
+        console.log("Even Numbers: " + evenNumbers); // Print the even numbers
+      }
+      filter();
+
+      // Example of using booleans in a reduce function
+      //reduce function syntax
+      function reduce() {
+        console.log("Reducing to sum:");
+        const sum = numbers.reduce(
+          (accumulator, current) => accumulator + current,
+          0
+        ); // Use reduce to sum the numbers
+        console.log("Sum: " + sum); // Print the sum of the numbers
+      }
+      reduce();
+
+      // Example of using booleans in a find function
+      //find function syntax
+      function find() {
+        console.log("Finding first even number:");
+        const firstEven = numbers.find((num) => num % 2 === 0);
+        console.log("First Even Number: " + firstEven); // Print the first even number found
+      }
+      find();
+
+      // Example of using booleans in a findIndex function
+      //findIndex function syntax
+      function findIndex() {
+        console.log("Finding index of first even number:");
+        const firstEvenIndex = numbers.findIndex((num) => num % 2 === 0);
+        console.log("Index of First Even Number: " + firstEvenIndex); // Print the index of the first even number found
+      }
+      findIndex();
+
+      // Example of using booleans in a some function
+      //some function syntax
+      function greaterThan3() {
+        console.log("Checking if any number is greater than 3:");
+        const hasGreaterThanThree = numbers.some((num) => num > 3); // Use some to check if any number is greater than 3
+        console.log("Has Number Greater Than 3: " + hasGreaterThanThree); // Print the result
+      }
+      greaterThan3();
+
+      // Example of using booleans in an every function
+      //every function syntax
+      function allLessThanTen() {
+        console.log("Checking if all numbers are less than 10:");
+        const allLessThanTen = numbers.every((num) => num < 10); // Use every to check if all numbers are less than 10
+        console.log("All Numbers Less Than 10: " + allLessThanTen); // Print the result
+      }
+      allLessThanTen();
+
+      // Example of using booleans in a includes function
+      //includes function syntax
+      function include() {
+        console.log("Checking if array includes 3:");
+        const includesThree = numbers.includes(3); // Use includes to check if the array contains
+        console.log("Array Includes 3: " + includesThree); // Print the result
+      }
+      include();
+
+      // Example of using booleans in a indexOf function
+      //indexOf function syntax
+      function indexOf() {
+        console.log("Finding index of 3 in array:");
+        const indexOfThree = numbeers.indexOf(3); // Use indexOf to find the index of 3 in the array
+        console.log("Index of 3: " + indexOfThree); // Print the index
+      }
+      indexOf();
+
+      // Example of using booleans in a lastIndexOf function
+      //lastIndexOf function syntax
+      function lastIndexOf() {
+        console.log("Finding Lastindex of 4 in array:");
+        const lastindexOffour = numbeers.lastIndexOf(4); // Use lastIndexOf to find the index of 4 in the array
+        console.log("LastIndex of 4: " + lastindexOffour); // Print the index
+      }
+      lastIndexOf();
+      //result from indexOf and lastIndexOf is same wtf!!!!!
+
+      // Example of using booleans in a join function
+      //join function syntax
+      function join() {
+        console.log("Joining array elements:");
+        const joinedNumbers = numbeers.join(", "); // Use join to create a string from the array elements
+        console.log("Joined Numbers: " + joinedNumbers); // Print the joined string
+      }
+      join();
+
+      // Example of using booleans in a split function
+      //split function syntax
+      function split() {
+        console.log("Splitting string into array:");
+        const str = "apple, banana, cherry"; // String to split
+        const splitFruits = str.split(", "); // Use split to create an array from the string
+        console.log("Split Fruits: " + splitFruits); // Print the resulting array
+      }
+      split();
+
+      // Example of using booleans in a reverse function
+      //reverse function syntax
+      function reverse() {
+        console.log("Reversing array:");
+        const reversedNumbers = numbeers.reverse(); // Use reverse to reverse the order of the array elements
+        console.log("Reversed Numbers: " + reversedNumbers); // Print the reversed array
+      }
+      reverse();
+
+      // Example of using booleans in a sort function
+      //sort function syntax
+      function sort() {
+        console.log("Sorting array:");
+        const sortedNumbers = numbeers.sort((a, b) => a - b); // Use sort to sort the array in ascending order
+        console.log("Sorted Numbers: " + sortedNumbers); // Print the sorted array
+      }
+      sort();
+
+      // Example of using booleans in a slice function
+      //slice function syntax
+      function slice() {
+        console.log("Slicing array:");
+        const slicedNumbers = numbeers.slice(1, 4); // Use slice to get a portion of the array
+        console.log("Sliced Numbers: " + slicedNumbers); // Print the sliced array
+      }
+      slice();
+
+      // Example of using booleans in a splice function
+      //splice function syntax
+      function splice() {
+        console.log("Splicing array:");
+        const splicedNumbers = numbeers.splice(1, 2, 6, 7); // Use splice to remove and add elements in the array
+        console.log("Spliced Numbers: " + splicedNumbers); // Print the removed elements
+        console.log("Array after Splice: " + numbeers); // Print the array after splicing
+      }
+      splice();
+
+      // Example of using booleans in a concat function
+      //concat function syntax
+      function concat() {
+        console.log("Concatenating arrays:");
+        const moreNumbers = [6, 7, 8]; // Another array to concatenate
+        const concatenatedNumbers = numbeers.concat(moreNumbers); // Use concat to combine two arrays
+        console.log("Concatenated Numbers: " + concatenatedNumbers); // Print the concatenated array
+      }
+      concat();
+
+      // Example of using booleans in a fill function
+      //fill function syntax
+      function fill() {
+        console.log("Filling array with 0:");
+        const filledNumbers = numbeers.fill(0); // Use fill to replace all elements
+        console.log("Filled Numbers: " + filledNumbers); // Print the filled array
+      }
+      fill();
+
+      // Example of using booleans in a flat function
+      //flat function syntax
+      function flat() {
+        console.log("Flattening nested array:");
+        const flattenedArray = nestedArray.flat(2); // Use flat to flatten the nested array
+        console.log("Flattened Array: " + flattenedArray); // Print the flattened array
+      }
+      flat();
+
+      // Example of using booleans in a flatMap function
+      //flatMap function syntax
+      function flatmap() {
+        console.log("Flattening and mapping array:");
+        const flatMappedArray = nestedArray.flatMap((item) => item); // Use flat
+        console.log("Flat Mapped Array: " + flatMappedArray); // Print the flat mapped array
+      }
+      flatmap();
+
+      // Example of using booleans in a toString function
+      //toString function syntax
+      function toString() {
+        console.log("Converting array to string:");
+        const arrayToString = numbeers.toString(); // Use toString to convert the array to a string
+        console.log("Array as String: " + arrayToString); // Print the string representation
+      }
+      toString();
+
+      // Example of using booleans in a toLocaleString function
+      //toLocaleString function syntax
+      function toLocalString() {
+        console.log("Converting array to locale string:");
+        const arrayToLocaleString = numbeers.toLocaleString(); // Use toLocaleString to convert the array to a locale string
+        console.log("Array as Locale String: " + arrayToLocaleString); // Print the locale string representation
+      }
+      toLocalString();
+
+      // Example of using booleans in a copyWithin function
+      //copyWithin function syntax
+      function copyWithin() {
+        console.log("Copying within array:");
+        const copyWithinArray = numbeers.copyWithin(0, 2, 4); // Use copyWithin to copy elements within the array
+        console.log("Array after Copy Within: " + copyWithinArray); // Print the array
+      }
+      copyWithin();
+
+      // Example of using booleans in a entries function
+      //entries function syntax
+      function entries() {
+        console.log("Getting entries of array:");
+        const entriesArray = numbeers.entries(); // Use entries to get an iterator of key-value pairs
+        for (const entry of entriesArray) {
+          console.log("Entry: " + entry[0] + " -> " + entry[1]); // Print each key-value pair
+        }
+      }
+      entries();
+
+      // Example of using booleans in a keys function
+      //keys function syntax
+      function keys() {
+        console.log("Getting keys of array:");
+        const keysArray = numbeers.keys(); // Use keys to get an iterator of keys
+        for (const key of keysArray) {
+          console.log("Key: " + key); // Print each key
+        }
+      }
+      keys();
+
+      // Example of using booleans in a values function
+      //values function syntax
+      function values() {
+        console.log("Getting values of array:");
+        const valuesArray = numbeers.values(); // Use values to get an iterator of values
+        for (const value of valuesArray) {
+          console.log("Value: " + value); // Print each value
+        }
+      }
+      values();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cart Quantity by Parth</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      button {
+        margin: 5px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .top-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .top-div button {
+        width: auto;
+        height: 50px;
+        font-size: 16px;
+        margin: 5px;
+        cursor: pointer;
+        background-color: #1780e8;
+        border: none;
+        color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+        transition: background-color 0.3s, transform 0.2s;
+        border-radius: 25px;
+      }
+      .top-div button:active {
+        transform: scale(0.85);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-div">
+      <button
+        onclick="
+      console.log(`Cart quantity : ${Cart_Quantity}`);
+      Cart_Quantity >=10 ? alert(`cart is full`) : alert(`Cart quantity : ${Cart_Quantity}`);
+      "
+      >
+        Show Quantity
+      </button>
+
+      <button onclick="addCart(1)">Add to cart</button>
+      <button onclick="addCart(2)">+2</button>
+      <button onclick="addCart(3)">+3</button>
+      <button onclick="addCart(4)">+4</button>
+      <button onclick="addCart(5)">+5</button>
+
+      <button onclick="removeCart(1)">Remove from cart</button>
+      <button onclick="removeCart(2)">-2</button>
+      <button onclick="removeCart(3)">-3</button>
+
+      <button
+        onclick="
+      Cart_Quantity=0;
+      console.log(`Cart quantity : ${Cart_Quantity}`);
+      alert(`Cart quantity is reset to : 0 `);
+      "
+      >
+        Reset Button
+      </button>
+    </div>
+    <script>
+      let Cart_Quantity = 0;
+
+      function addCart(num1) {
+        if (Cart_Quantity >= 10) {
+          alert(`cart is full : Cart quantity : ${Cart_Quantity}`);
+          console.log(`Cart quantity : ${Cart_Quantity}`);
+        } else if (Cart_Quantity + num1 > 10) {
+          alert(
+            `Cart Quantity can not be more than 10 : Cart quantity : ${Cart_Quantity}`
+          );
+          console.log(`Cart quantity : ${Cart_Quantity}`);
+        } else {
+          Cart_Quantity += num1;
+          console.log(`Cart quantity : ${Cart_Quantity}`);
+          alert(`Cart quantity : ${Cart_Quantity}`);
+        }
+      }
+
+      function removeCart(num2) {
+        if (Cart_Quantity - num2 < 0) {
+          Cart_Quantity = 0;
+        } else {
+          Cart_Quantity -= num2;
+        }
+        console.log(`Cart quantity : ${Cart_Quantity}`);
+        alert(`Cart quantity : ${Cart_Quantity}`);
+      }
+    </script>
+  </body>
+</html>
