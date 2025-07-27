@@ -56,6 +56,11 @@
         border: 4px solid #1976d2; /* Darker Blue */
         color: white;
       }
+      .reset-button {
+        background-color: #873cef; /* Red */
+        border: 4px solid #5e1d96; /* Darker Red */
+        color: white;
+      }
     </style>
   </head>
   <body>
@@ -75,15 +80,24 @@
         <img class="img" src="./Scissors image.jpeg" />
         Scissors
       </button>
+      <button
+        class="reset-button"
+        onclick="
+      score.wins=0;
+      score.losses=0;
+      score.tie=0;
+      "
+      >
+        Reset Score
+      </button>
     </div>
 
     <script>
       const score = {
         wins: 0,
         losses: 0,
-        tie: 0
-
-      }
+        tie: 0,
+      };
       function Play_game(userChoice) {
         let randomNumber = Math.random();
         // let userChoice = event.target.innerText; // Gets the text of the clicked button
@@ -126,6 +140,14 @@
         //       ? "You win!"
         //       : "You lose!")
 
+        if (Result === "You win!") {
+          score.wins++;
+        } else if (Result === "You lose!") {
+          score.losses++;
+        } else {
+          score.tie++;
+        }
+
         alert(
           "Your Choice : " +
             userChoice +
@@ -134,7 +156,16 @@
             computerChoice +
             "\n" +
             "Result : " +
-            Result
+            Result +
+            "\n" +
+            "Wins: " +
+            score.wins +
+            "\n" +
+            "Losses: " +
+            score.losses +
+            "\n" +
+            "Ties: " +
+            score.tie
         );
       }
     </script>
