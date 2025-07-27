@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Variables</title>
+  </head>
+  <body>
+    <script>
+      //1st way to make a variable
+      // Variables are used to store data that can be changed later
+      // They are declared using the 'let' keyword
+      
+      // Variables can hold different types of data, such as numbers, strings, and objects
+      // Variables can be used to store values that can be changed later
+      // Variables can be used to store values that can be used in calculations or other operations
+      // Variables can be used to store values that can be used in functions or other operations
+      // Variables can be used to store values that can be used in loops or other operations
+      // Variables can be used to store values that can be used in conditional statements or other operations
+      // Variables can be used to store values that can be used in arrays or other data structures
+
+      // Declare a variable
+      let variable1 = 3;
+      console.log(variable1);
+      // Declare another variable
+      let calculation = 2 + 2;
+      console.log(calculation);
+      console.log(calculation + 2);
+      // Declare a variable with a string
+      let result = "The result is: " + (calculation + 2);
+      console.log(result);
+
+      let message = "Hello, World!";
+      console.log(message); 
+      console.log(message.length);
+
+      variable1=5;
+      console.log(variable1);
+      
+
+      variable1 = variable1 + 2;
+      console.log(variable1);
+      variable1 += 2; // This is equivalent to variable1 = variable1 + 2
+      console.log(variable1);
+
+      //2nd way to make variable
+      const constantVariable = 10;
+      console.log(constantVariable);
+      // constantVariable = 20; // This will throw an error because constantVariable is a constant
+      // Constants cannot be reassigned, they are immutable
+      // You can use constants for values that should not change, like configuration settings or fixed values
+      // Constants are block-scoped, meaning they are only accessible within the block they are defined in
+      // console.log(variable1); // This will work because variable1 is defined in the global scope
+
+      
+      //3rd way to make a variable
+      var globalVariable = "I am a global variable";
+      console.log(globalVariable);
+      function testFunction() {
+        var localVariable = "I am a local variable";
+        console.log(localVariable);
+      }
+      // testFunction();
+      // console.log(localVariable); // This will throw an error because localVariable is not defined
+      // The variable 'localVariable' is only accessible within the function 'testFunction'
+      // console.log(globalVariable); // This will work because globalVariable is defined outside the function
+      // console.log(variable1); // This will work because variable1 is defined in the global scope
+
+      console.log(typeof variable1); // This will print the type of variable1
+      console.log(typeof constantVariable); // This will print the type of constantVariable
+      console.log(typeof globalVariable); // This will print the type of globalVariable
+      console.log(typeof message); // This will print the type of message
+      console.log(typeof calculation); // This will print the type of calculation
+      console.log(typeof result); // This will print the type of result 
+      console.log(typeof testFunction); // This will print the type of testFunction
+      console.log(typeof undefinedVariable); // This will print 'undefined' if undefinedVariable is not declared
+      // Note: 'undefinedVariable' is not declared, so it will throw an error if
+      // you try to access it. You can declare it first to avoid the error.
+      // If you want to check the type of a variable that is not defined yet,
+      // you can declare it first with 'let' or 'var' and then check its type.
+      
+      let undefinedVariable; // Declare it to avoid an error
+      console.log(typeof undefinedVariable); // This will print 'undefined' since it is declared but not assigned a value
+
+      // The 'typeof' operator is used to determine the type of a variable
+      // It returns a string indicating the type of the unevaluated operand
+      // Common types include 'number', 'string', 'boolean', 'object', 'function', and 'undefined'
+      // You can use 'typeof' to check the type of a variable before performing operations on it
+      // This is useful for debugging and ensuring that your code behaves as expected
+
+
+    </script>
+  </body>
+</html>

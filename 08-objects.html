@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>08-objects</title>
+  </head>
+  <body>
+    <script>
+      const product = {
+        name: 'socks',
+        price: 1090
+      };
+      
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      product.name = 'cotton socks';
+      console.log(product.name);
+
+      product.price = 990;
+      console.log(product.price);
+      console.log(product);
+
+      product.newProperty = true;
+      console.log(product.newProperty);
+
+      delete product.newProperty;
+      console.log(product.newProperty); // undefined
+    </script>
+  </body>
+</html>

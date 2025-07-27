@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>07 - If Else Statements</title>
+  </head>
+  <body>
+    <script>
+      // Example of using booleans in a conditional statement
+      //if else statement
+      const isLoggedIn = true; // Change this to false to test the other condition
+      if (isLoggedIn) {
+        // Check if the user is logged in
+        console.log("User is logged in."); // If true, this block will execute
+      } else {
+        console.log("User is not logged in."); // If false, this block will execute
+      }
+      console.log("End of login check."); // This will always execute
+
+
+      const age_of_person= 15 ;
+      if (i >=18 ) {
+        console.log("You can drive"); // This block will execute if the condition is true
+      } else if (18 >= i >= 16) {
+        console.log("Almost there");
+      } else {
+        console.log("you can not drive"); // This block will execute if the condition is false
+      }
+
+      // Example of using booleans in a function
+      //if else statement
+      const isAdmin = true; // Change this to true to test the other condition
+      function checkAccess(isAdmin) {
+        // Function to check if the user has admin access
+        console.log("Checking access...");
+        if (isAdmin) {
+          console.log("Access granted."); // If true, this block will execute
+        } else {
+          console.log("Access denied."); // If false, this block will execute
+        }
+      }
+      console.log("Calling checkAccess function...");
+      // Log before calling the function
+      // Call the function to check access
+      checkAccess(isAdmin); // Call the function with isAdmin as argument
+      console.log("Finished checking access."); // Log after function call
+
+      // Example of using booleans in a switch statement
+      //switch statement
+      //switch statement defines a variable and checks its value against different cases
+      console.log("Checking user role...");
+      const userRole = "admin"; // Change this to "admin" or "user" to test other cases
+      switch (
+        userRole // Switch statement to check user role
+      ) {
+        case "admin": // Case for admin role
+          console.log("Welcome, Admin!"); // If userRole is "admin", this block will execute
+          break; // Break to exit the switch
+        case "user": // Case for user role
+          console.log("Welcome, User!"); // If userRole is "user", this block will execute
+          break; // Break to exit the switch
+        case "guest": // Case for guest role
+          console.log("Welcome, Guest!"); // If userRole is "guest", this block will execute
+          break; // Break to exit the switch
+        default: // Default case if no other cases match
+          console.log("Unknown role."); // If userRole does not match any case, this block will execute
+      }
+      console.log("End of user role check."); // This will always execute
+
+      // Example of using booleans in a ternary operator
+      //ternary operator
+      const age = 20; // Change this to test different ages
+      const canVote = age >= 18 ? "Yes, you can vote." : "No, you cannot vote."; // Ternary operator to check voting eligibility  
+      console.log("Voting Eligibility: " + canVote); // Print the result of the ternary operation
+      console.log("End of voting eligibility check."); // This will always execute
+      
+    </script>
+  </body>
+</html>

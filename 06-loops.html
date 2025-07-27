@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Types of Loops</title>
+  </head>
+  <body>
+    <script>
+      // Example of using booleans in a loop
+      //for loop syntax
+      // Loop through numbers 0 to 4 and check if they are even or odd
+      console.log("Checking even or odd numbers:");
+
+      for (let i = 0; i < 10; i++) {
+        // Loop from 0 to 9
+        console.log("Current number: " + i); // Print the current number
+        // Check if the number is even or odd
+        if (i % 2 === 0) { // Check if the number is even
+          console.log(i + " is even."); // If true, print that the number is even
+        } else {
+          console.log(i + " is odd."); // If false, print that the number is odd
+        }
+      }
+
+      // Example of using booleans in a while loop
+      //while loop syntax
+      console.log("Counting down from 5 to 1:");
+      let count = 5; // Initialize count to 5
+      while (count > 0) {
+        // While count is greater than 0
+        console.log(count); // Print the current count
+        count--; // Decrement count by 1 //decrement count after each iteration
+      }
+      console.log("Countdown complete!"); // Print when countdown is complete
+
+      // Example of using booleans in a do-while loop
+      //do while loop syntax
+      console.log("Counting up from 1 to 5:");
+      let num = 1; // Initialize num to 1
+      do {
+        console.log(num); // Print the current num
+        num++; // Increment num by 1 //Increment count after each iteration
+      } while (num <= 5); // Continue while num is less than or equal to 5
+      console.log("Counting complete!"); // Print when counting is complete
+
+      // Example of using booleans in a forEach loop
+      //forEach loop syntax
+      console.log("Iterating through an array:");
+      const fruits = ["apple", "banana", "cherry"]; // Array of fruits
+      fruits.forEach((fruit) => {// Use forEach to iterate through the array
+        // forEach function takes a callback function that is called for each element in the array
+        // Use forEach to iterate through the array
+        console.log("Fruit: " + fruit); // Print each fruit
+      });
+      console.log("Finished iterating through the array."); // Print when iteration is complete
+
+      // Example of using booleans in a for...of loop
+      //for...of loop syntax
+      console.log("Using for...of to iterate through an array:");
+      const colors = ["red", "green", "blue"]; // Array of colors
+      for (const color of colors) {
+        // Use for...of to iterate through the array
+        console.log("Color: " + color); // Print each color
+      }
+      console.log("Finished iterating through colors."); // Print when iteration is complete
+
+
+      // Example of using booleans in a for...in loop
+      //for...in loop syntax
+      console.log("Using for...in to iterate through an object:");
+      const person = { name: "Alice", age: 30, city: "Wonderland" }; // Object with properties
+      for (const key in person) {
+        // Use for...in to iterate through the object's properties
+        console.log(key + ": " + person[key]); // Print each property and its value
+      }
+      console.log("Finished iterating through the object."); // Print when iteration is complete
+
+
+      // Example of using booleans in a nested loop
+      //nested loop syntax
+      console.log("Using nested loops to create a multiplication table:");
+      for (let i = 1; i <= 5; i++) {
+        // Outer loop for rows
+        let row = ""; // Initialize an empty string for the row
+        for (let j = 1; j <= 5; j++) {
+          // Inner loop for columns
+          row += i * j + "\t"; // Append the product to the row string with a tab space
+        }
+        console.log(row); // Print the completed row
+      }
+      console.log("Finished creating the multiplication table."); // Print when table creation is complete
+
+      // Example of using booleans in a break statement
+      //break statement syntax
+      console.log("Using break to exit a loop early:");
+      for (let i = 0; i < 10; i++) {
+        // Loop from 0 to 9
+        if (i === 5) {
+          console.log("Breaking the loop at i = " + i); // Print when breaking the loop
+          break; // Exit the loop when i equals 5
+        }
+        console.log("Current number: " + i); // Print the current number
+      }
+      console.log("Loop exited early."); // Print when loop is exited
+      // Example of using booleans in a continue statement
+      //continue statement syntax
+      console.log("Using continue to skip an iteration:");
+      for (let i = 0; i < 10; i++) {
+        // Loop from 0 to 9
+        if (i % 2 === 0) {
+          console.log("Skipping even number: " + i); // Print when skipping an even number
+          continue; // Skip the rest of the loop for even numbers
+        }
+        console.log("Current odd number: " + i); // Print the current odd number
+      }
+      console.log("Finished skipping even numbers."); // Print when skipping is complete
+
+
+      // Example of using booleans in a labeled loop
+      //labeled loop syntax
+      console.log("Using labeled loops:");
+      outerLoop: for (let i = 0; i < 3; i++)
+      {
+        // Outer loop labeled as outerLoop
+        console.log("Outer loop iteration: " + i); // Print the current outer loop iteration
+        for (let j = 0; j < 3; j++) {
+          // Inner loop
+          if (j === 1) {
+            console.log("Breaking out of both loops at i = " + i + ", j = " + j); // Print when breaking out
+            break outerLoop; // Break out of both loops when j equals 1
+          }
+          console.log("Inner loop iteration: " + j); // Print the current inner loop iteration
+        }
+      }
+      console.log("Finished using labeled loops."); // Print when labeled loops are complete
+
+
+      
+    </script>
+  </body>
+</html>
