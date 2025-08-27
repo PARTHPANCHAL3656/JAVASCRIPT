@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>09-DOM</title>
+    <!-- (Doucument Object Model) -->
+  </head>
+  <body>
+    <button>Hello</button>
+    <button class="js-button">Click Me</button>
+    <script>
+      // document.body.innerHTML = "Hello";
+      // document.title = 'Good Job';
+      // console.log(document.title);
+      // document.title = "Changed";
+      // console.log(document.body);
+      // console.log(typeof document.body);
+      // console.log(document.body.innerHTML);
+      // document.body.innerHTML = '<button> Good job </button>';
+      // console.log(document.body.innerHTML);
+
+      document.querySelector('button').innerHTML = 'Changed'
+      console.log(document.querySelector('button').innerHTML);
+      const buttonElement =document.querySelector('.js-button');
+      console.log(buttonElement);
+    </script>
+  </body>
+</html>

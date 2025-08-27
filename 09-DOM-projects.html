@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>09-DOM-PROJECTS</title>
+  </head>
+  <body>
+    <p>YouTube Subscribe button</p>
+    <p>Click the button to toggle between "Subscribe" and "Subscribed".</p>
+    <button onclick="subcribe()" class="js-sub-button">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input
+      class="js-cost-input"
+      placeholder="Cost of order"
+      onkeydown="handleCostKeydown(event);"
+    />
+    <!-- input is a void elememt -->
+    <!-- clicks,keydown => events
+    onclicks , onkeydown =>event listeners -->
+    <button onclick="calculateTotal();">Calculate</button>
+    <p class="js-total-cost"></p>
+
+    <script>
+
+      // window.document = document;
+      // window.console.log('window');
+      // window.alert(`hi `);
+      
+      function handleCostKeydown(event) {
+        if (event.key === "Enter") {
+          calculateTotal();
+        }
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector(".js-cost-input");
+        let cost = Number(inputElement.value); // changes string to integer
+        if (cost < 40) {
+          cost = cost + 10;
+        }
+        document.querySelector(".js-total-cost").innerHTML = `$${cost}`;
+      }
+
+      function subcribe() {
+        const buttonElement = document.querySelector(".js-sub-button");
+        if (buttonElement.innerText === "Subscribe") {
+          buttonElement.innerText = "Subscribed";
+        } else {
+          buttonElement.innerText = "Subscribe";
+        }
+      }
+      // console.log(document.querySelector('.js-sub-button'));
+      // console.log(document.querySelector('.js-sub-button').innerHTML);
+      // document.querySelector('.js-sub-button').innerHTML = 'Subscribed';
+    </script>
+  </body>
+</html>
