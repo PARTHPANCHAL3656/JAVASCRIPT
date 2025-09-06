@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #1c1818;
+        padding: 20px;
+      }
+      button {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        margin: 5px;
+        cursor: pointer;
+        background-color: #62615f;
+        border: none;
+        color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+        transition: background-color 0.3s, transform 0.2s;
+        border-radius: 25px;
+      }
+      h1 {
+        color: #0a87f4;
+        font-size: 50px;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+      }
+      p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <p>
+      <button onclick="allClear()">AC</button>
+      <button onclick="calculate('%')">%</button>
+      <button onclick="backspace()">&#8592;</button>
+      <button onclick="calculate('/')">/</button>
+    </p>
+    <p>
+      <button onclick="calculate('1')">1</button>
+      <button onclick="calculate('2')">2</button>
+      <button onclick="calculate('3')">3</button>
+      <button onclick="calculate('*')">*</button>
+    </p>
+    <p>
+      <button onclick="calculate('4')">4</button>
+      <button onclick="calculate('5')">5</button>
+      <button onclick="calculate('6')">6</button>
+      <button onclick="calculate('-')">-</button>
+    </p>
+    <p>
+      <button onclick="calculate('7')">7</button>
+      <button onclick="calculate('8')">8</button>
+      <button onclick="calculate('9')">9</button>
+      <button onclick="calculate('+')">+</button>
+    </p>
+    <p>
+      <button onclick="calculate('00')">00</button>
+      <button onclick="calculate('0')">0</button>
+      <button onclick="calculate('.')">.</button>
+      <button onclick="evaluateCalc()">=</button>
+    </p>
+
+    <script>
+      let calculation = "" ;
+      localStorage.getItem("calculation" , calculation);
+
+      function calculate(num) {
+        calculation += num;
+        console.log(calculation);
+      }
+
+      function allClear() {
+        calculation = "";
+        console.clear();
+        console.log("Cleared");
+      }
+
+      function backspace() {
+        calculation = calculation.slice(0, -1);
+        console.log(calculation);
+      }
+
+      function evaluateCalc() {
+        // Evaluate only if calculation is not empty
+        if (calculation) {
+          let result = eval(calculation);
+          console.log(result);
+          calculation = result.toString();
+        } else {
+          console.log("Error");
+          calculation = "";
+        }
+      }
+
+      localStorage.setItem("calculation :" , calculation);
+      console.log(localStorage.getItem("calculation :" , calculation));
+    </script>
+  </body>
+</html>

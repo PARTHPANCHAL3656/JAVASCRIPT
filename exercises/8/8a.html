@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>8a-basketball-function exercise</title>
+  </head>
+  <body>
+    <script>
+      const product1 = {
+        name : "basketball",
+        price : 2095,
+      };
+
+      const product2 = {
+        name : "baseball",
+        price : 2095,
+      };
+
+      function comparePrice(product1,product2) {
+        if (product1.price < product2.price) {
+          console.log(product1.name + ' is cheaper');
+        } else if (product2.price < product1.price) {
+          console.log(product2.name + ' is cheaper');
+        } else {
+          console.log('Both products have the same price');
+        }
+      }
+      comparePrice(product1,product2);
+
+      function isSameProduct(product1,product2) {
+        if (product1.name === product2.name && product1.price === product2.price) {
+          console.log("product1 and product2 are same ")
+        }
+        else {
+          console.log("product1 and product2 are different")
+        }
+      }
+      isSameProduct(product1,product2);
+      console.log(product1);
+      console.log(product1.name);
+      console.log(product1.price);
+
+      product1.price += 500;
+      console.log(product1.price);
+      product2.price += 500;
+      console.log(product1.price);
+
+      product1["delivery-time"] = '3 days' ;
+      console.log(product1);
+
+      const a = "Good Morning !"
+      console.log(a);
+      console.log(a.toLowerCase());
+      console.log(a.toUpperCase());
+
+      const b = " test 123" 
+      console.log(b.repeat(5));
+    </script>
+  </body>
+</html>

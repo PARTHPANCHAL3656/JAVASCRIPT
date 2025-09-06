@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>COIN FILP GAME</title>
+    <style>
+      body {
+        background-color: rgb(59, 204, 127);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .heads {
+        background-color: black;
+        color: white;
+        font-size: 24px;
+        font-weight: 600;
+        height: 120px;
+        width: 120px;
+        border-radius: 60px;
+        border: 5px solid white;
+      }
+      .tails {
+        background-color: white;
+        color: black;
+        font-size: 24px;
+        font-weight: 600;
+        height: 120px;
+        width: 120px;
+        border-radius: 60px;
+        border: 5px solid black;
+      }
+      .reset {
+        background-color: black;
+        color: white;
+        font-size: 24px;
+        font-weight: 600;
+        height: 120px;
+        width: 120px;
+        border-radius: 60px;
+        border: 5px solid white;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="heads" onclick="playGame('Heads')">HEADS</button>
+    <button class="tails" onclick="playGame('Tails')">TAILS</button>
+    <button
+      class="reset"
+      onclick="
+      score1.Player=0;
+      score1.Computer=0;
+      alert(`The score is reset \n Player : ${score1.Player} \n Computer : ${score1.Computer} `);
+      console.log(`The score is reset \n Player : ${score1.Player} \n Computer : ${score1.Computer} `);
+      localStorage.removeItem('score1');
+      localStorage.setItem('score1', JSON.stringify(score1));
+      "
+    >
+      Reset Score
+    </button>
+    <script>
+      let computerMove = "";
+      let result = "";
+      let outcome = "";
+
+      const score1 = JSON.parse(localStorage.getItem("score1")) || {
+        Player: 0,
+        Computer: 0,
+      };
+
+      console.log("Local Storage Message: " + localStorage.getItem("score1"));
+
+      function playGame(playerMove) {
+        let num = Math.random();
+
+        if (playerMove === "Heads") {
+          computerMove = "Tails";
+        } else {
+          computerMove = "Heads";
+        }
+
+        if (num >= 0 && num <= 0.5) {
+          result = "Heads";
+        } else {
+          result = "Tails";
+        }
+
+        if (playerMove === result) {
+          outcome = "Player wins & Computer losses !";
+          console.log(`Player wins & Computer losses !`);
+        } else {
+          outcome = "Computer wins & Player losses !";
+          console.log(`Computer wins & Player losses !`);
+        }
+
+        if (outcome === "Player wins & Computer losses !") {
+          score1.Player++;
+          console.log("Player : " + score1.Player);
+          console.log("Computer : " + score1.Computer);
+        } else {
+          score1.Computer++;
+          console.log("Player : " + score1.Player);
+          console.log("Computer : " + score1.Computer);
+        }
+
+        localStorage.setItem("score1", JSON.stringify(score1));
+
+        alert(
+          "\n Player pics : " +
+            playerMove +
+            "\n Computer pics : " +
+            computerMove +
+            "\n Coin lands on : " +
+            result +
+            "\n Outcome : " +
+            outcome +
+            "\n Player : " +
+            score1.Player +
+            "\n Computer : " +
+            score1.Computer
+        );
+      }
+    </script>
+  </body>
+</html>
