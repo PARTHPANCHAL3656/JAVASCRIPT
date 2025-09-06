@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #1c1818;
+        padding: 20px;
+      }
+      button {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        margin: 5px;
+        cursor: pointer;
+        background-color: #62615f;
+        border: none;
+        color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+        transition: background-color 0.3s, transform 0.2s;
+        border-radius: 25px;
+      }
+      h1 {
+        color: #0a87f4;
+        font-size: 50px;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+      }
+      p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <div
+      id="display"
+      style="
+        background: #222;
+        color: #0a87f4;
+        font-size: 2em;
+        padding: 10px 20px;
+        margin: 20px auto 20px auto;
+        width: 220px;
+        border-radius: 10px;
+        text-align: right;
+        box-shadow: 0 2px 8px #000;
+        min-height: 40px;
+      "
+    >
+      0
+    </div>
+    <p>
+      <button onclick="allClear()">AC</button>
+      <button onclick="calculate('%')">%</button>
+      <button onclick="backspace()">&#8592;</button>
+      <button onclick="calculate('/')">/</button>
+    </p>
+    <p>
+      <button onclick="calculate('1')">1</button>
+      <button onclick="calculate('2')">2</button>
+      <button onclick="calculate('3')">3</button>
+      <button onclick="calculate('*')">*</button>
+    </p>
+    <p>
+      <button onclick="calculate('4')">4</button>
+      <button onclick="calculate('5')">5</button>
+      <button onclick="calculate('6')">6</button>
+      <button onclick="calculate('-')">-</button>
+    </p>
+    <p>
+      <button onclick="calculate('7')">7</button>
+      <button onclick="calculate('8')">8</button>
+      <button onclick="calculate('9')">9</button>
+      <button onclick="calculate('+')">+</button>
+    </p>
+    <p>
+      <button onclick="calculate('00')">00</button>
+      <button onclick="calculate('0')">0</button>
+      <button onclick="calculate('.')">.</button>
+      <button onclick="evaluateCalc()">=</button>
+    </p>
+
+    <script>
+      let calculation = "";
+
+      const display = document.getElementById("display");
+
+      function updateDisplay(val) {
+        display.textContent = val || "0";
+      }
+      function calculate(num) {
+        // Prevent multiple operators in a row
+        if (/[+\-*/%]$/.test(calculation) && /[+\-*/%]/.test(num)) return;
+        // Prevent multiple decimals in a number
+        if (
+          num === "." &&
+          /\.?\d*$/.test(calculation.split(/[-+*/%]/).pop()) &&
+          calculation.endsWith(".")
+        )
+          return;
+        calculation += num;
+        updateDisplay(calculation);
+      }
+      function allClear() {
+        calculation = "";
+        updateDisplay("0");
+      }
+
+      function backspace() {
+        calculation = calculation.slice(0, -1);
+        updateDisplay(calculation);
+      }
+
+      function evaluateCalc() {
+        try {
+          // Only evaluate if calculation is valid
+          if (/^[0-9.\+\-*/%]+$/.test(calculation)) {
+            let result = eval(calculation);
+            updateDisplay(result);
+            calculation = result.toString();
+          } else {
+            updateDisplay("Error");
+            calculation = "";
+          }
+        } catch {
+          updateDisplay("Error");
+          calculation = "";
+        }
+      }
+      // Initialize display
+      updateDisplay("0");
+    </script>
+  </body>
+</html>

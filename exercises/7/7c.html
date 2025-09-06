@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>7c-units-function exercise</title>
+  </head>
+  <body>
+    <script>
+      function convertLength(length, from, to) {
+        let conversionFactor1 = 1.6; //1 mile = 1.6km
+        let conversionFactor2 = 5280; //1 mile = 5280ft
+        let conversionFactor3 = 3281; //1km = 3281ft
+        let units = ["km", "miles", "ft"];
+
+        if (
+          from === "km" &&
+          to === "miles" &&
+          units.includes(from) &&
+          units.includes(to)
+        ) {
+          alert(`Convert ${length} km to miles: ${length / conversionFactor1}`);
+          console.log(
+            `Convert ${length} km to miles: ${length / conversionFactor1}`
+          );
+          return length / conversionFactor1;
+        } else if (
+          from === "miles" &&
+          to === "km" &&
+          units.includes(from) &&
+          units.includes(to)
+        ) {
+          alert(`Convert ${length} miles to km: ${length * conversionFactor1}`);
+          console.log(
+            `Convert ${length} miles to km: ${length * conversionFactor1}`
+          );
+          return length * conversionFactor1;
+        } else if (
+          from === "miles" &&
+          to === "ft" &&
+          units.includes(from) &&
+          units.includes(to)
+        ) {
+          alert(`Convert ${length} miles to ft: ${length * conversionFactor2}`);
+          console.log(
+            `Convert ${length} miles to ft: ${length * conversionFactor2}`
+          );
+          return length * conversionFactor2;
+        } else if (
+          from === "ft" &&
+          to === "miles" &&
+          units.includes(from) &&
+          units.includes(to)
+        ) {
+          alert(`Convert ${length} ft to miles: ${length / conversionFactor2}`);
+          console.log(
+            `Convert ${length} ft to miles: ${length / conversionFactor2}`
+          );
+          return length / conversionFactor2;
+        } else if (
+          from === "km" &&
+          to === "ft" &&
+          units.includes(from) &&
+          units.includes(to)
+        ) {
+          alert(`Convert ${length} km to ft: ${length * conversionFactor3}`);
+          console.log(
+            `Convert ${length} km to ft: ${length * conversionFactor3}`
+          );
+          return length * conversionFactor3;
+        } else if (
+          from === "ft" &&
+          to === "km" &&
+          units.includes(from) &&
+          units.includes(to)
+        ) {
+          alert(`Convert ${length} ft to km: ${length / conversionFactor3}`);
+          console.log(
+            `Convert ${length} ft to km: ${length / conversionFactor3}`
+          );
+          return length / conversionFactor3;
+        } else if (from === to && units.includes(from) && units.includes(to)) {
+          alert(`No conversion needed for ${length} ${from}`);
+          console.log(`No conversion needed for ${length} ${from}`);
+          return length; // If no conversion is needed
+        } else {
+          alert(`invalid Unit ${from}`);
+          console.error(`invalid unit ${from}`);
+          return length; // If no conversion is needed
+        }
+      }
+      convertLength(10, "miles", "km");
+      convertLength(16, "km", "miles");
+
+      convertLength(5, "miles", "ft");
+      convertLength(5280, "ft", "miles");
+
+      convertLength(5, "km", "ft");
+      convertLength(3281, "ft", "km");
+
+      convertLength(100, "miles", "miles");
+      convertLength(120, "km", "km");
+      convertLength(140, "ft", "ft");
+
+      convertLength(50, "lbs", "lbs");
+    </script>
+  </body>
+</html>

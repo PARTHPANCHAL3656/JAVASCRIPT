@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>7b-temp-function exercise</title>
+  </head>
+  <body>
+    <script>
+      function convertToFahrenheit(celsius) {
+        let fahrenheit = (celsius * 9) / 5 + 32; // Convert Celsius to Fahrenheit
+        console.log(`The temperature in Fahrenheit is: ${fahrenheit}F`);
+        alert(`The temperature in Fahrenheit is: ${fahrenheit}F`);
+
+        return fahrenheit; // Return the converted temperature
+      }
+
+      function convertToCelsius(fahrenheit) {
+        let celsius = ((fahrenheit - 32) * 5) / 9; // Convert Fahrenheit to Celsius
+        console.log(`The temperature in Celsius is: ${celsius}C`);
+        alert(`The temperature in Celsius is: ${celsius}C`);
+
+        return celsius; // Return the converted temperature
+      }
+
+      function convertTemprature(degrees, unit) {
+        if (unit === 'C') {
+          return convertToFahrenheit(degrees); // Convert Celsius to Fahrenheit
+        } else if (unit === 'F') {
+          return convertToCelsius(degrees); // Convert Fahrenheit to Celsius
+        } else {
+          alert('Invalid unit. Please use "C" for Celsius or "F" for Fahrenheit.');
+          console.error('Invalid unit. Please use "C" for Celsius or "F" for Fahrenheit.');
+          // Log error message
+          return null; // Return null for invalid unit
+        }
+
+        return null; // Default return for invalid input
+      }
+
+      convertToFahrenheit(25); // Call the function with 25 degrees Celsius answer sholud be 77
+      convertToCelsius(86); // Call the function with 77 degrees Fahrenheit answer should be 30
+      convertTemprature(25, ''); // Call the function to convert 25 degrees Celsius to Fahrenheit
+      convertTemprature(86, 'F'); // Call the function to convert 86 degrees Fahrenheit to Celsius
+    </script>
+  </body>
+</html>
