@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>6a</title>
+  </head>
+  <body>
+    <script>
+      let hour = "13";
+      let name = "Parth";
+
+      if (hour >= 6 && hour <= 12) {
+        console.log(`Good Morning ${name} !`);
+      } else if (hour >= 13 && hour <= 17) {
+        console.log(`Good afternoon ${name} !`);
+      } else {
+        console.log(`Good Night ${name} !`);
+      }
+
+      let age = 68;
+      let holiday = false;
+
+      holiday === false && ((age >= 0 && age <= 6) || (age >= 65 && age <= 100))
+        ? console.log("you get the discount")
+        : console.log("you do not get the discount");
+
+      let num = Math.random();
+      let result = "";
+      let guess = "heads";
+
+      num >= 0 && num <= 0.5 ? (result = "heads") : (result = "tails");
+      guess === result ? console.log(`You win !`) : console.log(`You lose !`);
+    </script>
+  </body>
+</html>
