@@ -2,6 +2,7 @@ const todoList = [{ name: "make dinner", dueDate: "17-08-2025" }];
 renderTodoList();
 function renderTodoList() {
   let todoListHTML = "";
+  
   for (let i = 0; i < todoList.length; i++) {
     const todoObject = todoList[i];
     //const name = todoObject.name;
