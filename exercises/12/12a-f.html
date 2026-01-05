@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12a-f</title>
+  </head>
+  <body>
+    <button class="js-start-button1" onclick="upadteButton1()">Start</button>
+    <br />
+    <button class="js-start-button2" onclick="upadteButton2()">Start</button>
+    <br />
+    <button class="js-AddToCart-button1" onclick="handleAddToCart1()">
+      Add to cart
+    </button>
+    <div id="message1"></div>
+    <br />
+    <button class="js-AddToCart-button2" onclick="handleAddToCart2()">
+      Add to cart
+    </button>
+    <div id="message2"></div>
+    <script>
+      // Exercise 12a: Create a variable 'add' with a function that logs 2 + 3
+      const add = function () {
+        console.log(2 + 3);
+      };
+      // Run the function twice
+      add();
+      add();
+      console.log("---");
+
+      // Exercise 12b: Create runTwice function that takes a function and runs it twice
+      function runTwice(fun) {
+        fun();
+        fun();
+      }
+
+      // Test with anonymous function
+      runTwice(function () {
+        console.log("12b");
+      });
+
+      // Test with the add function from 12a
+      runTwice(add);
+      console.log("---");
+
+      // Exercise 12c: setTimeout with DOM manipulation on button
+      console.log("12c");
+      function upadteButton1() {
+        setInterval(function () {
+          document.querySelector(".js-start-button1").innerHTML = "Finished..";
+        }, 1000);
+      };
+
+      // Exercise 12d: setTimeout with DOM manipulation on button start --> loading.. --1sec--> finished..
+      console.log("12d");
+      // Immediately change text to 'Loading...'
+      const upadteButton2 = function () {
+        document.querySelector(".js-start-button2").innerHTML = "Loading..";
+        // After 1 second, change the text to 'Finished!'
+        setInterval(function () {
+          document.querySelector(".js-start-button2").innerHTML = "Finished..";
+        }, 3000);
+      };
+
+      // Exercise 12e: Add to Cart Button
+      // Display the 'Added' message immediately
+      console.log("12e");
+      const handleAddToCart1 = function () {
+        const messageElement = document.getElementById("message1");
+        messageElement.innerHTML = "Added";
+        // After 2 seconds, remove the message
+        setInterval(function () {
+          messageElement.innerHTML = "";
+        }, 2000);
+      };
+
+      // Exercise 12f: Add to Cart Button with clearTimeout function like setInterval
+      let timeoutId;
+      console.log("12f");
+      function handleAddToCart2() {
+        // Display the 'Added' message immediately
+        const messageElement = document.getElementById("message2");
+        messageElement.innerHTML = "Added";
+
+        // Cancel the previous timeout (if it exists)
+        clearTimeout(timeoutId);
+
+        // After 2 seconds, remove the message
+        timeoutId = setInterval(function () {
+          messageElement.innerHTML = "";
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>

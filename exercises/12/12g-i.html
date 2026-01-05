@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <div>
+    <h1>Watch the browser tab title!</h1>
+    <div class="buttons">
+      <button onclick="addMessage()">Add</button>
+      <button onclick="removeMessage()">Remove</button>
+    </div>
+    <div class="info">Current messages: <span id="count">2</span></div>
+  </div>
+
+  <script>
+    let messages = 2;
+    let intervalId;
+
+    function updateTitle() {
+      if (messages === 0) {
+        document.title = 'App';
+      } else if (messages === 1) {
+        document.title = '(1) New message';
+      } else {
+        document.title = `(${messages}) New messages`;
+      }
+    }
+
+    function startTitleUpdates() {
+      // Clear any existing interval first
+      clearInterval(intervalId);
+      // Start updating the title every 1 second
+      intervalId = setInterval(updateTitle, 1000);
+      // Update immediately too
+      updateTitle();
+    }
+
+    function stopTitleUpdates() {
+      clearInterval(intervalId);
+      document.title = 'App';
+    }
+
+    function addMessage() {
+      messages++;
+      document.getElementById('count').innerHTML = messages;
+      // Start updating the title if we went from 0 to 1
+      if (messages === 1) {
+        startTitleUpdates();
+      } else {
+        updateTitle();
+      }
+    }
+
+    function removeMessage() {
+      // Don't let messages go below 0
+      if (messages > 0) {
+        messages--;
+        document.getElementById('count').innerHTML = messages;
+        // If messages reached 0, stop changing the title
+        if (messages === 0) {
+          stopTitleUpdates();
+        } else {
+          updateTitle();
+        }
+      }
+    }
+
+    // Initialize the title
+    startTitleUpdates();
+  </script>
+</body>
+</html>

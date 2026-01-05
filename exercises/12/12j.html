@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //12-i-j.html
+      const multiply = (num1, num2) => {
+        console.log(num1 * num2);
+      };
+      multiply(2, 5);
+
+      //12-j.html -- forEach
+      let count = 0;
+      function countPositive(nums) {
+        nums.forEach((value, index) => {
+          if (value >= 0) {
+            console.log(`index = ${index} number = ${value}`);
+            count++;
+          }
+        });
+        console.log(count);
+      }
+      countPositive([1, -2, -4, 6, -7, -6, -8, 4, 7, -4, 5]);
+
+      //12-m.html -- map
+      function addNum(array, num) {
+        console.log(array.map((value) => value + num));
+      }
+      addNum((array = [1, -2, -4, 4, 7, -4, 5]), 4);
+
+      //12-n.html -- filter
+      function removeEgg(foods) {
+        console.log(
+          foods.filter((value, index) => {
+            if (value === "egg") return false;
+            else return true;
+          })
+        );
+      }
+      removeEgg(["egg", "apple", "ham", "egg", "grapes"]);
+
+      //12-o.html -- filter
+      let countEgg = 0;
+      function remove2Egg(food) {
+        console.log(
+          food.filter((value, index) => {
+            if (value === "egg" && countEgg < 2) {
+              countEgg++;
+              return false;
+            } else {
+              return true;
+            }
+          })
+        );
+      }
+      remove2Egg(["egg", "apple", "ham", "egg", "grapes", "egg"]);
+    </script>
+  </body>
+</html>
