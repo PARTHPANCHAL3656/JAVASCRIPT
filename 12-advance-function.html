@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advance function</title>
+  </head>
+  <body>
+    <button onclick="" class="js-button">Click</button>
+    <script>
+      function greeting() {
+        console.log(`hello`);
+      }
+      greeting();
+
+      const num = 2;
+      const function1 = function greeting() {
+        console.log(`hello2`);
+      }; //functions are values & can be saved in a variable
+
+      console.log(function1);
+      console.log(typeof function1);
+      function1();
+
+      const object1 = {
+        num: 2,
+        fun: function greeting() {
+          console.log(`hello3`);
+        }, // method = function saved inside of an object
+      };
+      object1.fun();
+
+      function display(pram) {
+        console.log(pram);
+      }
+      display(2);
+
+      function run(pram) {
+        pram();
+      }
+      run(function () {
+        console.log(`hello4`);
+      }); // function inside of a function
+
+      // setTimeout(function () {
+      //   console.log(`Timeout`);
+      // }, 3000);
+      // //setTimeout function has 2 parameters  , one is function and other is time after it will run in msec
+      // //3000 ms = 3sec
+
+      // console.log(`next line after Timeout`);
+      // //Asysnchronous code ie. the function sets timer and moves to the next line execute
+
+      // setInterval(function () {
+      //   console.log(`Interval`);
+      // }, 3000);
+
+      // console.log("next line 2");
+
+      ["make dinner", "wash dishes", "watch youtube"].forEach(function (
+        value,
+        index
+      ) {
+        if (value === "wash dishes") {
+          return; //does the same thing 'continue' (lets us skip to the next iteration)
+        }
+        console.log(index);
+        console.log(value);
+      }); // .forEach() is the preferred way to loop through an array
+
+      // 12 -- PART 2
+
+      //Arrow function
+      const arrowfunction = (param1, param2) => {
+        console.log("Hello !");
+        return 5;
+      };
+      arrowfunction(); //Both are function the same
+
+      const regularfunction = function (param1, param2) {
+        console.log("Hello !");
+        return 5;
+      };
+      // => == function
+
+      const oneParam = (Parameter) => {
+        //No need of () for only 1 parameter its an arrow function SHORT CUT
+        console.log(Parameter + 1);
+      };
+      oneParam(2);
+
+      //const oneLine = () => {
+      // return 2 + 3;
+      // };
+      const oneLine = () => 2 + 3; //shortcut for above function
+      console.log(oneLine());
+
+      // Example of arrow function
+      // For pasing a function into anothe function , => use arrow function
+
+      ["make dinner", "wash dishes", "watch youtube"].forEach(
+        (value, index) => {
+          if (value === "wash dishes") {
+            return;
+          }
+          console.log(index);
+          console.log(value);
+        }
+      );
+
+      const buttonElement = document.querySelector(".js-button");
+      //addEventListener takes 2 values 'event' and 'function' to run and works like onclick
+      // ()=> {} arrow function is used here and 'click' is the event (on-'click') from <button> tag
+
+      const eventListener = () => {
+        console.log("click");
+      };
+      buttonElement.addEventListener("click", eventListener);
+      buttonElement.removeEventListener("click", eventListener);
+      buttonElement.addEventListener("click2", eventListener);
+
+      // .filter() function works like forEach()
+      // filter() makes a new array and here it makes one of +ve nos 
+      console.log([1, -3, 5].filter((value, index) => {
+          // if (value >= 0) {
+          //   return true;
+          // } else {
+          //   return false;
+          // }
+          return value >= 0;
+        }));
+
+      // .map() function works like forEach()
+      //.map() makes a new array and here it makes one by adding 10 to each value or double of it 
+      console.log([1, -3, 5].map((value, index) => {
+          // return value + 10;
+          return value*2;
+        }));
+
+      console.log([1, -3, 5].map(value =>  value*2));
+      //short cut for above and works with only 1 parameter 
+    </script>
+  </body>
+</html>
